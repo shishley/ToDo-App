@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+
+    <link rel="stylesheet" href="/todoapp/css/style.css">
+  
+</head>
+<body>
+        <main class="app">
+            <section class="greeting">
+                <h2 class="title">
+                    Welcome <input type="text" id="name" placeholder="Put Your Name here">
+                </h2>
+            </section>
+            <section class="create-to-do">
+                <h3>Create To Do List</h3>
+                <form id="new-todo-form">
+                    <h4>What do you wanna add?</h4>
+                    <input type="text"
+                        name="content"
+                        id="content"
+                        placeholder="e.g go buy groceries">
+
+            <h4>Pick Category</h4>
+                <div class="options">
+                    <label>
+                        <input type="radio"
+                        name="category"
+                        id="catone"
+                        value="work">
+                        <span class="bubble work"></span>
+                        <div>Work</div>
+                    </label>
+
+                    <label>
+                        <input type="radio"
+                        name="category"
+                        id="cattwo"
+                        value="personal">
+                        <span class="bubble personal"></span>
+                        <div>Personal</div>
+                    </label>
+                    <input type="submit" value="Add To Do">
+                </div>
+                </form>
+            </section>
+            <section class="todo-list">
+                <h3>To Do List</h3>
+                <div class="list" id="todo-list">
+                    <div class="todo-item">
+                        <input type="checkbox">
+                        <span class="bubble work"></span>
+
+                        <div class="todo-content">
+                            <input type="text" value="edit the footage" readonly>
+                        </div>
+
+                        <div class="actions">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </div>
+
+                    <div class="todo-item">
+                        <input type="checkbox">
+                        <span class="bubble personal"></span>
+
+                        <div class="todo-content">
+                            <input type="text" value="get fresh meat" readonly>
+                        </div>
+
+                        <div class="actions">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    <script src="/todoapp/javascript/script.js"></script>
+</body>
+</html>
