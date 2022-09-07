@@ -1,0 +1,121 @@
+:root{
+    --primary: green;
+    --work: blue;
+    --personal: yellow;
+    --dark: black;
+    --danger: red;
+    --light: wheat;
+    --shadow: 0 1px 3px rgba(48, 197, 29, 0.1);
+    --work-glow: 0 1px 4px purple;
+    --personal-glow: 0 1px 4px red;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+input:not([type="radio"]) :not([type="checkbox"]), button{
+    border: none;
+    appearance: none;
+    background: none;
+    outline: none;
+    cursor: initial;
+}
+
+body{
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+section{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+h3{
+    color: var(--dark);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+h4{
+    color: var(--dark);
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.greeting .title{
+    display: flex;
+}
+
+.greeting .title input{
+    margin-left: 0.5rem;
+    min-width: 0;
+    flex: 1 1 0%;
+    border-radius: 0.5rem;
+}
+
+.greeting .title, .greeting .title input{
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 0.4rem;
+}
+
+.create-to-do input[type="text"]{
+display: block;
+width: 100%;
+font-size: medium;
+padding: 1rem 1.5rem;
+color: var(--dark);
+background-color: white;
+border-radius: 0.5rem;
+box-shadow: var(--shadow);
+margin-bottom: 1.5rem;
+}
+
+.create-to-do .options{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem
+}
+
+.create-to-do .options label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background-color: rgb(243, 206, 105);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+}
+
+input[type="radio"], 
+input[type="checkbox"]{
+    display: none;
+}
+
+.bubble{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--work);
+    box-shadow: var(--work-glow);
+
+}
+
+.bubble.personal{
+    border-color: var(--personal);
+    box-shadow: var(--personal-glow);
+}
