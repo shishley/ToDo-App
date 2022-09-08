@@ -1,12 +1,11 @@
 :root{
-    --primary: green;
     --work: blue;
-    --personal: yellow;
+    --personal: purple;
     --dark: black;
     --danger: red;
     --light: wheat;
     --shadow: 0 1px 3px rgba(48, 197, 29, 0.1);
-    --work-glow: 0 1px 4px purple;
+    --work-glow: 0 1px 4px lightblue;
     --personal-glow: 0 1px 4px red;
 }
 
@@ -42,6 +41,8 @@ h3{
     font-size: 1rem;
     margin-bottom: 0.5rem;
     font-weight: 400;
+    color: brown;
+    text-align: center;
 }
 
 h4{
@@ -60,12 +61,15 @@ h4{
     min-width: 0;
     flex: 1 1 0%;
     border-radius: 0.5rem;
+    border: none;
+    background-color: rgb(243, 206, 105);
 }
 
 .greeting .title, .greeting .title input{
     font-size: 1.5rem;
     font-weight: 700;
     padding: 0.4rem;
+    text-align: center;
 }
 
 .create-to-do input[type="text"]{
@@ -74,10 +78,11 @@ width: 100%;
 font-size: medium;
 padding: 1rem 1.5rem;
 color: var(--dark);
-background-color: white;
+background-color: rgb(194, 245, 112);
 border-radius: 0.5rem;
 box-shadow: var(--shadow);
 margin-bottom: 1.5rem;
+border: none;
 }
 
 .create-to-do .options{
@@ -118,4 +123,120 @@ input[type="checkbox"]{
 .bubble.personal{
     border-color: var(--personal);
     box-shadow: var(--personal-glow);
+}
+
+.bubble::after{
+    content: "";
+    display: block;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    background-color: var(--work);
+    box-shadow: var(--work-glow);
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+}
+
+.bubble.personal::after{
+    background-color: var(--personal);
+    box-shadow: var(--personal-glow);
+}
+
+input:checked~ .bubble::after{
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+}
+
+.create-to-do .options label div{
+    margin: 1rem;
+    font-size: 1.25rem;
+}
+
+.create-to-do input[type="submit"]{
+    display: block;
+    width: 100%;
+    font-size: medium;
+    padding: 1rem 1.5rem;
+    color: black;
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    box-shadow: var(--personal-glow);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    opacity: 0.5;
+    margin-left: 50%;
+}
+
+.create-to-do input[type="submit"]:hover{
+    opacity: 1;
+    background-color: rgb(243, 206, 105);
+}
+
+.todo-list .todo-item{
+    display: flex;
+    align-items: center;
+    background-color: rgb(243, 206, 105);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+}
+
+.todo-list .list{
+    margin: 1rem 0;
+}
+
+.todo-item{
+    display: block;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.todo-item .todo-content{
+    flex: 1 1 0%;
+}
+
+.todo-item .todo-content input{
+    color: black;
+    background-color: rgb(243, 206, 105);
+    border: none;
+    align-items: center;
+    margin-left: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+}
+
+.todo-item .actions{
+    display: flex;
+    align-items: center;
+}
+
+.todo-item .actions button{
+    display: block;
+    padding: 0.5rem;
+    border-radius: 0.25;
+    cursor: pointer;
+    color: black;
+    transition: 2s ease-in-out;
+}
+
+.todo-item .actions button:hover{
+    opacity: 0.75;
+}
+
+.todo-item .actions .edit{
+    margin-right: 0.5rem;
+    background-color: rgb(105, 223, 89);
+    border-radius: 0.5rem;
+}
+
+.todo-item .actions .delete{
+    background-color: var(--danger);
+    border-radius: 0.5rem;
+}
+
+.todo-item.done .todo-content input{
+    text-decoration: line-through;
+    color: gray;
 }
