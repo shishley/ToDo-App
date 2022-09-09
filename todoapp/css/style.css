@@ -32,11 +32,9 @@ body {
   background-color: var(--light);
   color: var(--dark);
 }
-.appimage{
-    display: block;
-    text-align: center;
-    
-
+.appimage {
+  display: block;
+  text-align: center;
 }
 section {
   margin-top: 2rem;
