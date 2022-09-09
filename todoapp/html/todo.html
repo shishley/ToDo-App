@@ -5,28 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do App</title>
-
+    <!--linking css-->
     <link rel="stylesheet" href="/todoapp/css/style.css" />
   </head>
+
   <body>
     <main class="app">
+      <!--user name-->
       <section class="greeting">
         <h2 class="title">
           Welcome
           <input type="text" id="name" placeholder="Put Your Name here" />
         </h2>
       </section>
+      <!--form for adding tasks-->
       <section class="create-to-do">
-        <h3>Create To Do List</h3>
+        <h3>CREATE LIST</h3>
         <form id="new-todo-form">
-          <h4>What do you wanna add?</h4>
+          <h4>What do you want to add?</h4>
           <input
             type="text"
             name="content"
             id="content"
             placeholder="e.g go buy groceries"
           />
-
+          <!--option to personalise task-->
           <h4>Pick Category</h4>
           <div class="options">
             <label>
@@ -42,6 +45,7 @@
                 id="cattwo"
                 value="personal"
               />
+              <!--submiting your input-->
               <span class="bubble personal"></span>
               <div>Personal</div>
             </label>
@@ -49,24 +53,24 @@
           </div>
         </form>
       </section>
-
+      <!--task list-->
       <section class="todo-list">
-        <h3>To Do List</h3>
+        <h3>TASKS</h3>
         <div class="list" id="todo-list">
           <div class="todo-item done">
             <input type="checkbox" />
             <span class="bubble work"></span>
-
+            <!--examples that will be deleted-->
             <div class="todo-content">
               <input type="text" value="edit the footage" readonly />
             </div>
-
+            <!--CRUD buttons-->
             <div class="actions">
               <button class="edit">Edit</button>
               <button class="delete">Delete</button>
             </div>
           </div>
-
+          <!--checkbox to tick off completed items-->
           <div class="todo-item">
             <input type="checkbox" />
             <span class="bubble personal"></span>
@@ -74,17 +78,11 @@
             <div class="todo-content">
               <input type="text" value="get fresh meat" readonly />
             </div>
-
-            <div class="actions">
-              <button class="edit">Edit</button>
-              <button class="delete">Delete</button>
-            </div>
           </div>
         </div>
       </section>
-      -->
     </main>
-
+    <!--linking the js external file-->
     <script src="/todoapp/javascript/main.js"></script>
   </body>
 </html>

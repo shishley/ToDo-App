@@ -1,3 +1,4 @@
+/*declaring styling formats that will be called later on*/
 :root {
   --work: blue;
   --personal: purple;
@@ -15,6 +16,8 @@
   box-sizing: border-box;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
+
+/*crud buttons*/
 
 input:not([type="radio"]) :not([type="checkbox"]),
 button {
@@ -53,6 +56,8 @@ h4 {
   font-weight: 700;
 }
 
+/*welcome*/
+
 .greeting .title {
   display: flex;
 }
@@ -73,6 +78,8 @@ h4 {
   padding: 0.4rem;
   text-align: center;
 }
+
+/*adding tasks*/
 
 .create-to-do input[type="text"] {
   display: block;
@@ -109,6 +116,8 @@ input[type="radio"],
 input[type="checkbox"] {
   display: none;
 }
+
+/*category*/
 
 .bubble {
   display: flex;
@@ -154,6 +163,8 @@ input:checked ~ .bubble::after {
   font-size: 1.25rem;
 }
 
+/*submit button initally faded*/
+
 .create-to-do input[type="submit"] {
   display: block;
   width: 100%;
@@ -169,6 +180,8 @@ input:checked ~ .bubble::after {
   margin-left: 50%;
 }
 
+/*get darker after hover*/
+
 .create-to-do input[type="submit"]:hover {
   opacity: 1;
   background-color: rgb(243, 206, 105);
@@ -183,6 +196,8 @@ input:checked ~ .bubble::after {
   box-shadow: var(--shadow);
   margin-bottom: 1rem;
 }
+
+/*displaying tasks*/
 
 .todo-list .list {
   margin: 1rem 0;
@@ -236,6 +251,8 @@ input:checked ~ .bubble::after {
   background-color: var(--danger);
   border-radius: 0.5rem;
 }
+
+/*striking out completed*/
 
 .todo-item.done .todo-content input {
   text-decoration: line-through;

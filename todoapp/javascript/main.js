@@ -1,3 +1,5 @@
+//setting up local storage for the user input
+
 window.addEventListener('load', ()=> {
     todos = JSON.parse(localStorage.getItem('todos')) || [];
     const nameInput = document.querySelector('#name');
@@ -10,6 +12,7 @@ window.addEventListener('load', ()=> {
     nameInput.addEventListener('change', e => {
         localStorage.setItem('username', e.target.value);
     })
+//clicking the add to do button will submit users input
 
     newTodoForm.addEventListener('submit', e=> {
         e.preventDefault();
@@ -20,6 +23,7 @@ window.addEventListener('load', ()=> {
             done: false,
             createdAt: new Date().getTime()
         }
+//saving the input to local storage
 
         todos.push(todo);
         localStorage.setItem('todos', JSON.stringify(todos) );
@@ -41,6 +45,8 @@ window.addEventListener('load', ()=> {
             const todoItem = document.createElement('div');
             todoItem.classList.add('todo-item')
 
+//declaring variable to be used
+
             const label = document.createElement('label');
             const input = document.createElement('input');
             const span = document.createElement('span');
@@ -52,6 +58,8 @@ window.addEventListener('load', ()=> {
             input.type = 'checkbox';
             input.checked = todo.done;
             span.classList.add('bubble');
+
+//creating condtions to decide
 
             if(todo.category == 'personal'){
                 span.classList.add('personal');
@@ -95,6 +103,8 @@ window.addEventListener('load', ()=> {
 
                 DisplayTodos();
             })
+
+//creating functioning crud buttons
 
             editbt.addEventListener('click', e =>{
                 const input = content.querySelector('input');
